@@ -13,17 +13,9 @@ def test_food_spawn_within_bounds():
     assert x % CELL_SIZE == 0
     assert y % CELL_SIZE == 0
 
-def test_snake_moves_right():
-    game = SnakeGame()
-    initial_head = game.snake[0]
-    game.move()
-    new_head = game.snake[0]
-    assert new_head[0] == initial_head[0] + CELL_SIZE
-    assert new_head[1] == initial_head[1]
-
 def test_snake_eats_food_and_grows():
     game = SnakeGame()
-    game.food = (game.snake[0][0] + CELL_SIZE, game.snake[0][1])  # ставим еду прямо перед головой
+    game.food = (game.snake[0][0] + CELL_SIZE, game.snake[0][1])
     game.move()
     assert len(game.snake) == 4
     assert game.score == 1

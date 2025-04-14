@@ -6,7 +6,7 @@ CELL_SIZE = 20
 
 
 class SnakeGame:
-    def init(self):
+    def __init__(self):
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         self.clock = pygame.time.Clock()
